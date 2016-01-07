@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+ 	<title>Meyer Sound | Email Open Rates</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!--
+	<div id="videoOverlay" class="col-sm-12 col-md-6 video-overlay">
+		<iframe id="vid-tut" width="853" height="480" src="#" frameborder="0" allowfullscreen></iframe>
+	</div>-->
+
+	<nav class="navbar navbar-default navbar-fixed-top ms-nav">
+		<div class="container">
+		    <div class="navbar-header">
+		      <a href="http://www.meyersound.com/" class="navbar-brand"><img src="img/ms_logo.png" alt="Meyer Sound" /></a>
+		    </div>
+				<ul class="nav navbar-nav navbar-right" id="ms-brand">
+					<a class="navbar-title" href="http://www.meyersound.com/email/email_signature/distribution/index.html">Open Rates: December 2015</a>
+				</ul>
+		</div>
+	</nav>
+	<section class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-4 instructionsForm leftSide">
+				<div class="row">
+					<div class="col-md-12">
+						<form id="form" action="#">
+					  		<fieldset>
+					  			<label>Email Data:</label>
+					  			<select id="numSwitch">
+					  				<option value="amieDemo">Amie Demo Launch</option>
+					  				<option value="amieLaunch">Amie Launch</option>
+									<option value="holidayVid">Holiday Video</option>
+					  				<option value="ddrPrice">DDR Price Increase</option>
+					  				<option value="seasonThanks">Season of Thanks</option>
+					  				<option value="ssDMB">Sound Stories: DMB</option>
+					  				<option value="ssMetallica">Sound Stories: Metallica</option>
+					  				<option value="soundSource">Sound Source</option>
+					  			</select>
+					    		<input id="submit" type="submit" value="submit" />
+					  		</fieldset>
+						</form>
+					</div>
+				</div>
+				<div class="row">
+						<div class="col-md-12">
+							<figure>
+							<h1 id="email_name">Default</h1>
+							  <figcaption>
+							    Unique Opens
+							  </figcaption>
+							<div class="pieOverlay">
+								<h2><span id="perc">100</span>%</h2>
+								<div class="pieBG"></div>
+							</div>
+							  <svg width="200" height="200" class="chart">
+							    <circle r="50" cx="100" cy="100" class="pie"/>
+							  </svg>
+							  <figcaption class="info-cont">
+							  	<div class="inl">
+							  		<h3>Total Delivered</h3>
+							  		<h2 id="deliv">12222</h2>
+							  	</div>
+							  	<div class="inl">
+									<h3>Unique Opens</h3>
+							  		<h2 id="opens">12222</h2>
+							  	</div>
+							  </figcaption>
+							</figure>
+						</div>
+				</div>
+			</div>
+			<div id="iFrame" class="col-xs-6 col-sm-6 col-md-8 email_preview">
+				<iframe id="vid-tut" width="100%" height="400" src="http://www.meyersound.com/mail/2016/1601_ise_constellation_training/index.html" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+		</div>
+	</section>
+	<script type="text/javascript" src="js/funcs.js"></script>
+	<script type="text/javascript" src="js/conversion.js"></script>
+	<!--<script type="text/javascript" src="js/min/script-min.js"></script>-->
+</body>
+</html>

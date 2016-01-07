@@ -1,0 +1,494 @@
+//Stylesheet for Email Signature Generator
+
+//Developed by: Peter Berki
+//Developed for: Meyer Sound
+
+
+@import "variables"
+@import "mixins"
+
+body
+	background-color: $pureWhite
+
+scroll
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a
+	font-family: "HelveticaNeue", Helvetica, Arial, sans-serif
+
+p
+	+absoluteZero
+
+label,
+legend,
+input,
+form,
+fieldset,
+select,
+a,
+h2,
+button
+	font-family: $typeface
+	+borderRadius(8px)
+	font-weight: lighter
+	font-size: 18px
+	text-decoration: none
+
+a
+	color: $ms_blue
+	transition: color 0.5s ease
+
+a:hover,
+a:focus
+	color: $ms_blueShade
+	text-decoration: none
+h2
+	font-size: 24px
+	line-height: 29px
+
+select,
+iframe
+	display: block
+
+iframe
+	+absoluteZero
+	position: absolute
+
+label
+	+absoluteZero
+	margin-top: 10px
+
+input,
+select
+	border: $borderStyle
+	display: block
+	margin: 5px auto
+	padding: 4px
+
+input
+	width: 100%
+
+fieldset
+	padding: 1.5em 2em 1.5em
+	text-align: center
+	border: $borderStyle
+	background-color: $typeWhite
+
+legend
+	font-family: $typeface
+	font-size: 18px
+	text-align: center
+	line-height: 23px
+	width: 40%
+	border: 0
+
+form
+	margin: 0 auto
+	width: 100%
+
+button
+	background-color: $pureWhite
+	color: $ms_blue_second
+	+borderRadius(8px)
+	border: 2px solid $ms_blue_second
+	transition: background-color 0.5s ease
+
+button:hover
+	background-color: $ms_blue_second_hov
+
+figure
+	margin: 0 auto
+	text-align: center
+	font-size: 18px
+	padding-top: 20%
+
+figcaption
+	padding: 0 0 5% 0
+
+.leftSide
+	margin-top: 14% !important
+
+#email_name
+	font-weight: bold
+	margin: 0 auto
+
+.chartOverlay
+	margin-top: -200px
+
+.pieOverlay
+	width: 100%
+	height: 100%
+	position: absolute
+	border-radius: 50px
+	z-index: 999999
+	transition: opacity 0.5s ease
+
+.pieOverlay h2
+	position: absolute
+	width: 200px
+	margin-left: 18%
+	margin-top: 22%
+	font-weight: bold
+	font-size: 36px !important
+	color: $ms_blue !important
+	text-align: center
+	z-index: 999999
+
+.pieBG
+	margin: 0 auto
+	position: absolute
+	margin-top: 7%
+	margin-left: 25%
+	width: 150px
+	height: 150px
+	+borderRadius(75px)
+	background-color: $pureWhite
+	z-index: 999998
+
+circle
+	fill: #dddddd
+	stroke: $ms_blue
+	stroke-width: 100
+	stroke-dasharray: 0 314
+	transition: stroke-dasharray 0.3s ease
+
+svg
+	margin: 0 auto
+	transform: rotate(-90deg)
+	background: #dddddd
+	border-radius: 50%
+	display: block
+
+.inl
+	display: inline-block
+	width: 40%
+
+.info-cont
+	margin-top: 10%
+	+borderRadius(4px)
+	background-color: #eeeeee
+	border: 1px solid #dddddd
+
+figcaption h3
+	margin: 0 auto
+	margin-top: 20px
+	font-weight: bold
+	font-size: 18px
+
+figcaption h2
+	margin: 0 auto
+	font-weight: lighter
+	font-size: 24px
+	color: $ms_blue !important
+
+.chartOverlay svg
+	border-radius: 25%
+
+.video-overlay
+	position: absolute
+	width: 100%
+	z-index: 199999
+
+.video-overlay iframe
+	margin-right: 10%
+
+#videoOverlay
+	display: none
+	transition: all 0.5s ease
+
+#vid-tut
+	opacity: 1
+	transition: all 0.5s ease
+	
+.bold
+	padding: 0
+	font-weight: bold
+	+borderRadius(4px)
+
+.highlight
+	padding: 4px 6px
+	@extend .bold
+	background-color: $ms_yellow
+
+.font-brand
+	margin-top: 6px
+	font-family: Arial, sans-serif
+	font-size: 14px
+	line-height: 17px
+
+#copyPaste
+	transition: all 0.5s ease
+
+.rowPad
+	margin-right: 1em
+
+.overhang
+	margin: 5px auto
+	padding: 20px
+	text-align: left
+	background-color: $typeWhite
+	z-index: 99999999999999
+	+borderRadius(8px)
+
+.overhang h2,
+.overhang h4
+	margin: 0 auto
+	line-height: 32px
+
+.overhang h2
+	padding-bottom: 10px
+
+.copy_button
+	margin-top: 40px
+	width: 120px
+	height: 40px
+	font-size: 16px
+
+#padTop
+	margin-top: 0%
+	margin-left: 0%
+	left: -50%
+	position: fixed
+	padding-top: 60px
+	padding-left: 100px
+	z-index: 200000
+	height: 110%
+	width: 35%
+	background-color: white
+	transition: all 0.5s ease
+
+#submit
+	margin: 0 auto
+	margin-top: 1.5em
+	background-color: $pureWhite
+	color: $ms_blue
+	border: 1px solid $ms_blue
+	width: 120px
+	height: 40px
+	font-size: 16px
+	text-align: center
+	+borderRadius(8px)
+	//+boxShadow(0px 0px 0px $ms_blueShade)
+	transition: all 0.5s ease
+	
+#submit:hover
+	color: $pureWhite
+	background-color: $ms_blue
+	//+boxShadow(6px 6px 0px $ms_blueShade)
+
+#close-button
+	@extend #submit
+	margin-right: 1em
+	margin-top: 0
+	margin-bottom: 1em
+
+button input
+	font-size: 14px
+	line-height: 19px
+	vertical-align: middle
+
+.ms-nav .container
+	height: 100px
+.ms-nav
+	margin: 0 auto
+	background-color: $rich_grey
+	border: 0
+
+.navbar-brand
+	margin: 0 auto
+
+.navbar-title
+	font-size: 16px
+	line-height: 22px
+	display: block
+	margin-top: 60px
+
+#ms-brand a
+	font-size: 20px
+	color: $ms_blue
+	transition: all 0.5s ease
+
+#ms-brand a:hover
+	text-decoration: none
+	color: $ms_blueShade
+
+.notSelectable
+	margin: 0 auto
+	+unSelect(none)
+
+.selectable
+	+unSelect(all)
+
+.instructions
+	margin-top: 10%
+	padding: 1.5em 2em 1.5em
+
+.email_preview
+	@extend .instructions
+	padding: 0
+
+.instructions h2,
+.instructions li
+	font-family: $typeface
+	color: $ms_black
+
+.copyInst
+	@extend .instructions
+	margin-top: 0
+	border: 1px solid $ms_ltGrey
+	background-color: $pureWhite
+	+borderRadius(8px)
+
+.important
+	border-left: 4px solid $ms_crimson
+	//margin-top: 4px
+	//height: 6px
+	//background-color: $ms_crimsonTrans
+
+.instructions ol
+	+absoluteZero
+	margin-left: 30px
+
+.instructionsForm
+	@extend .instructions
+
+ol
+	li
+		font-size: 16px
+		line-height: 21px
+		padding-bottom: 10px
+		ul
+			list-style: none
+			width: 100%
+			margin: 20px auto 10px auto
+			padding: 0
+			padding: 20px 30px
+			+borderRadius(8px)
+			background-color: $typeWhite
+			li
+				display: block
+				font-size: 14px
+				line-height: 17px
+				padding: 0 10px
+				margin: 10px auto
+
+#blackBG
+	position: fixed
+	+absoluteZero
+	width: 100%
+	height: 100%
+	display: none
+	background-color: rgba(0,0,0,0)
+	z-index: 55555
+	transition: all 0.5s ease
+
+.phone-list
+	display: block
+	width: 100%
+
+.phone-ext
+	display: inline
+	width: 20%
+
+.phone-list label,
+.phone-list input,
+.phone-ext label,
+.phone-ext input
+	display: inline
+
+.phone-list input
+	width: 70%
+
+.phone-ext input
+	width: 20%
+
+@media screen and (max-width: 1200px)
+	#blackBG
+		height: 110%
+		width: 180%
+
+	.phone-list input
+		width: 67%
+
+	.phone-ext input
+		width: 20%
+
+	#padTop
+		width: 50%
+
+@media screen and (max-width: 992px)
+	#padTop
+		left: -1000px
+		width: 100%
+
+	.overhang
+		width: 100%
+
+	.instructions
+		margin-top: 14%
+
+	.copyInst
+		margin-top: 0
+
+	.instructionsForm
+		margin-top: 20%
+
+	.email_preview
+		margin-top: 20%
+
+	#form
+		margin: 0 auto
+
+	.phone-list input
+		width: 71%
+
+	.phone-ext input
+		width: 10%
+
+@media screen and (max-width: 767px)
+	.navbar-nav
+		float: right
+
+	.navbar-title
+		margin-top: 0
+		display: none
+
+	fieldset
+		padding: 0.75em 0
+	form
+		width: 100%
+
+	.instructions
+		margin-top: 20%
+
+
+	.instructionsForm
+		margin-top: 40%
+
+	.email_preview
+		margin-top: 40%
+
+	.padTop
+		margin-top: 8%
+
+	#padTop
+		margin-top: 0
+		margin-left: 0
+		padding-left: 40px
+
+	.copyInst
+		margin-top: 0
+
+	.phone-ext input
+		width: 15%
+
+@media screen and (max-width: 440px)
+	.phone-list input
+		width: 67%
+	.phone-ext input
+		width: 15%
