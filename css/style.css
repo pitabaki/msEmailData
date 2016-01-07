@@ -52,7 +52,10 @@ iframe {
 iframe {
   margin: 0 auto;
   padding: 0;
-  position: absolute; }
+  position: absolute;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px; }
 
 label {
   margin: 0 auto;

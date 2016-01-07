@@ -81,11 +81,13 @@ function init(){
 		amieDemo: 54,
 		amieLaunch: 24,
 		ddrPrice: 55,
+		ddrVideo: 55,
 		seasonThanks: 46,
 		holidayVid: 21,
 		ssDMB: 23,
 		ssMetallica: 24,
 		soundSource: 27,
+		leopardEOY: 46,
 		defaultSet: 100
 	};
 
@@ -93,11 +95,13 @@ function init(){
 		amieDemo: 115,
 		amieLaunch: 37669,
 		ddrPrice: 579,
+		ddrVideo: 530,
 		seasonThanks: 578,
 		holidayVid: 77695,
 		ssDMB: 30316,
 		ssMetallica: 30304,
 		soundSource: 32424,
+		leopardEOY: 728,
 		defaultSet: 100
 	};
 
@@ -105,11 +109,13 @@ function init(){
 		amieDemo: 61,
 		amieLaunch: 9356,
 		ddrPrice: 294,
+		ddrVideo: 232,
 		seasonThanks: 245,
 		holidayVid: 16376,
 		ssDMB: 6913,
 		ssMetallica: 7549,
 		soundSource: 6970,
+		leopardEOY: 346,
 		defaultSet: 100
 	};
 
@@ -121,11 +127,13 @@ function init(){
 		amieDemo: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
 		amieLaunch: "http://www.meyersound.com/mail/2015/1512_amie_launch/index.html/",
 		holidayVid: "http://www.meyersound.com/mail/2015/1512_holiday_email/index.html",
-		ddrPrice: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
-		seasonThanks: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
+		ddrPrice: "http://www.meyersound.com/mail/2015/1512_ddrPrice/index.html",
+		ddrVideo: "http://www.meyersound.com/mail/2015/1512_video/index.html",
+		seasonThanks: "http://www.meyersound.com/mail/2015/1511_thanks/index.html/",
 		ssDMB: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
 		ssMetallica: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
-		soundSource: "http://www.meyersound.com/mail/seminars.html"
+		soundSource: "http://www.meyersound.com/mail/seminars.html",
+		leopardEOY: "http://www.meyersound.com/mail/2015/1512_leopard_EOY/"
 	}
 
 	// work out percentage as a result of total
@@ -187,6 +195,14 @@ function init(){
 				setPieChart('ddrPrice');
 				dropD(vidTut, links['ddrPrice']);
 				break;
+			case "ddrVideo":
+				textSwap(email_name, "DDR Video");
+				textSwap(email_perc, stats.ddrVideo);
+				textSwap(deliv, totRec.ddrVideo);
+				textSwap(opens, uniqOpen.ddrVideo);
+				setPieChart('ddrVideo');
+				dropD(vidTut, links['ddrVideo']);
+				break;
 			case "seasonThanks":
 				textSwap(email_name, "Season of Thanks");
 				textSwap(email_perc, stats.seasonThanks);
@@ -219,11 +235,19 @@ function init(){
 				setPieChart('soundSource');
 				dropD(vidTut, links['soundSource']);
 				break;
+			case "leopardEOY":
+				textSwap(email_name, "LEOPARD EOY");
+				textSwap(email_perc, stats.leopardEOY);
+				textSwap(deliv, totRec.leopardEOY);
+				textSwap(opens, uniqOpen.leopardEOY);
+				setPieChart('leopardEOY');
+				dropD(vidTut, links['leopardEOY']);
+				break;
 			default:
 				console.log("doesn't work!");
 				break;
 		}
-
+		return false;
 		/*
 		//////////////////////////////////////////////////////////
 
