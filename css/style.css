@@ -106,13 +106,75 @@ figure {
   margin: 0 auto;
   text-align: center;
   font-size: 18px;
-  padding-top: 20%; }
+  padding-top: 8%; }
 
 figcaption {
-  padding: 0 0 5% 0; }
+  padding: 0 0 3% 0; }
+
+figcaption .title {
+  color: #5a85d7; }
+
+iframe::-webkit-scrollbar {
+  display: none; }
+
+.info-nav {
+  display: inline; }
+
+.info-bar span, .subject-bar span {
+  padding: 0 20px;
+  font-size: 29px;
+  font-weight: lighter; }
+
+.subject-bar {
+  margin-top: 0 !important;
+  padding: 10px 0 !important; }
+
+.navbar {
+  min-height: 0; }
+
+.date {
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 8px;
+  float: right; }
+
+#email_name_nav, #subject_nav {
+  margin-top: 100px;
+  position: relative;
+  z-index: 1029;
+  background-color: #b3b3b2 !important; }
+
+#email_name_nav .container, #subject_nav .container {
+  height: 0; }
+
+#subject_nav {
+  margin-top: 0;
+  background-color: #d5d5d2 !important; }
+
+#subject_nav .info-bar, #subject_nav .subject-bar {
+  background-color: #d5d5d2 !important; }
+
+#subject_nav {
+  margin-top: 0 !important; }
+
+.info-bar, .subject-bar {
+  background-color: #b3b3b2;
+  padding: 14px 0; }
+
+.info-bar h1, .subject-bar h1 {
+  font-weight: lighter !important;
+  color: #222222;
+  font-size: 24px;
+  line-height: 30px; }
+
+.subject {
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 4px 0 14px 0; }
 
 .leftSide {
-  margin-top: 14% !important; }
+  margin-top: 4% !important; }
 
 #email_name {
   font-weight: bold;
@@ -133,7 +195,7 @@ figcaption {
   position: absolute;
   width: 200px;
   margin-left: 18%;
-  margin-top: 22%;
+  margin-top: 23%;
   font-weight: bold;
   font-size: 36px !important;
   color: #5a85d7 !important;
@@ -169,7 +231,8 @@ svg {
 
 .inl {
   display: inline-block;
-  width: 40%; }
+  width: 40%;
+  vertical-align: bottom; }
 
 .info-cont {
   margin-top: 10%;
@@ -341,7 +404,7 @@ button input {
   user-select: all; }
 
 .instructions, .email_preview, .copyInst, .instructionsForm {
-  margin-top: 10%;
+  margin-top: 2%;
   padding: 1.5em 2em 1.5em; }
 
 .email_preview {
@@ -429,7 +492,13 @@ ol li {
   .phone-ext input {
     width: 20%; }
   #padTop {
-    width: 50%; } }
+    width: 50%; }
+  .pieBG {
+    margin-top: 9%;
+    margin-left: 20%; }
+  .pieOverlay h2 {
+    margin-top: 28%;
+    margin-left: 13%; } }
 
 @media screen and (max-width: 992px) {
   #padTop {
@@ -450,7 +519,13 @@ ol li {
   .phone-list input {
     width: 71%; }
   .phone-ext input {
-    width: 10%; } }
+    width: 10%; }
+  .pieBG {
+    margin-top: 7%;
+    margin-left: 24%; }
+  .pieOverlay h2 {
+    margin-top: 24%;
+    margin-left: 17%; } }
 
 @media screen and (max-width: 767px) {
   .navbar-nav {

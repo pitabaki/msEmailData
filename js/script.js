@@ -11,11 +11,11 @@ Developed for: Meyer Sound
 //return document id
 
 function key(id){
-		'use strict';
-		if(typeof id === "string"){
-			return document.getElementById(id);
-		}
+	'use strict';
+	if(typeof id === "string"){
+		return document.getElementById(id);
 	}
+}
 
 //replace text function
 function textSwap(id,message){
@@ -60,23 +60,13 @@ function fadedBG(id,hue,cloak,time){
 	}
 }
 
-function vidIllum(id,name,opac,cloak,time){
+function vidIllum(name,opac){
 	'use strict';
-	var bgDiv = id;
 	var innerDiv = name;
-	if(typeof cloak !== "undefined"){
-		bgDiv.style.display = cloak;
-		if(typeof time === 'undefined'){
-			setTimeout(function(){
-				innerDiv.style.opacity = opac;
-			},50);
-		}else{
-			setTimeout(function(){
-				innerDiv.style.opacity = opac;
-			},time);
-		}
+	if(typeof innerDiv.style.opacity !== "undefined"){
+		innerDiv.style.opacity = opac;
 	}else{
-		console.log("Error: the variable 'cloak' was incorrectly passed through function 'vidIllum'. Double-check your variables.")
+		console.log("Error: one of the variables was incorrectly passed through function 'vidIllum'. Double-check your variables.")
 	}
 }
 
@@ -175,8 +165,14 @@ function init(){
 		vidOverlay = key("videoOverlay"),
 		vidTut = key("vid-tut"),
 		client = key("client"),
+		email_name = key("email_name"),
+		email_perc = key("perc"),
 		rplName = key("rplName"),
 		rplTitle = key("rplTitle"),
+		deliv = key("deliv"),
+		opens = key("opens"),
+		totalClicks = key("total-clicks"),
+		uniqueClicks = key("unique-clicks"),
 		rplNum1 = key("rplNum1"),
 		rplNum2 = key("rplNum2"),
 		rplNum3 = key("rplNum3"),
@@ -189,60 +185,198 @@ function init(){
 		emHREF = anchor[1]; //References signature's # email address
 		//console.log(emHREF);
 		//console.log(numSwitch[selection].value);
-		console.log(vidTut);
-		vidTut.style.opacity = "0";
-		vidOverlay.style.display = "none";
+		//vidOverlay.style.display = "none";
+		vidTut.height = "1200";
 
-		console.log(typeof outlook10.link);
+	var total = 314,
+	    pie = document.querySelector('.pie'),
+	    activeClass = 'active';
+
+	var stats = {
+		plsWorkshopInvite: 54,
+		productUpdate: 24,
+		ddrPrice: 55,
+		ddrVideo: 55,
+		seasonThanks: 46,
+		holidayVid: 21,
+		ssDMB: 23,
+		ssMetallica: 24,
+		soundSource: 27,
+		leopardEOY: 46,
+		defaultSet: 100
+	};
+
+	var totRec = {
+		plsWorkshopInvite: 465,
+		productUpdate: 37669,
+		ddrPrice: 579,
+		ddrVideo: 530,
+		seasonThanks: 578,
+		holidayVid: 77695,
+		ssDMB: 30316,
+		ssMetallica: 30304,
+		soundSource: 32424,
+		leopardEOY: 728,
+		defaultSet: 100
+	};
+
+	var totClicks = {
+		plsWorkshopInvite: 7,
+		productUpdate:,
+	};
+
+	var uniqClicks = {
+		plsWorkshopInvite: 7,
+		productUpdate:,
+	};
+
+	var uniqOpen = {
+		plsWorkshopInvite: 198,
+		productUpdate: 9356,
+		ddrPrice: 294,
+		ddrVideo: 232,
+		seasonThanks: 245,
+		holidayVid: 16376,
+		ssDMB: 6913,
+		ssMetallica: 7549,
+		soundSource: 6970,
+		leopardEOY: 346,
+		defaultSet: 100
+	};
+
+	//MAKE SURE TO
+	//FILL IN THESE
+	//LINKSSSSSS
+
+	var links = {
+		plsWorkshopInvite: "http://meyersound.com/mail/2016/1603_dealer_workshop_invitation/index.html",
+		productUpdate: "http://www.meyersound.com/mail/2015/1512_amie_launch/index.html/",
+		holidayVid: "http://www.meyersound.com/mail/2015/1512_holiday_email/index.html",
+		ddrPrice: "http://www.meyersound.com/mail/2015/1512_ddrPrice/index.html",
+		ddrVideo: "http://www.meyersound.com/mail/2015/1512_video/index.html",
+		seasonThanks: "http://www.meyersound.com/mail/2015/1511_thanks/index.html/",
+		ssDMB: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
+		ssMetallica: "http://www.meyersound.com/mail/2015/1511_amie_demo_launch/index.html/",
+		soundSource: "http://www.meyersound.com/mail/seminars.html",
+		leopardEOY: "http://www.meyersound.com/mail/2015/1512_leopard_EOY/"
+	}
+
+	// work out percentage as a result of total
+	var numberFixer = function(num){
+	  var result = ((num * total) / 100);
+	  return result;
+	}
+
+	// when you click a button setPieChart and setActiveClass
+
+	var setPieChart = function(name){
+	  var number = stats[name],
+	      fixedNumber = numberFixer(number),
+	      result = fixedNumber + ' ' + total;
+	  pie.style.strokeDasharray = result;
+	}
+
+	// Set up default settings
+	setPieChart('defaultSet');
+	//setActiveClass(buttons.children[0]);
+
 	//on submit
 	function fluxCapacitate(){
 
 		//captures client selected
 		var numSwitch = key("numSwitch"),
 		selection = numSwitch.selectedIndex;
-
-		name = name.value;
-		position = position.value;
-		email = email.value;//Replaces # with whatever user enters
-		email = email.toLowerCase();
-
-		//number values are updated and the additional identifier is added
-		number = "T: " + number.value;
-		number2 = "T: " + number2.value;
-		number3 = "C: " + number3.value;
-		ext1 = ext1.value;
-		ext2 = ext2.value;
-		emHREF.href = "mailto:" + email;
-		formPos.style.left = 0;
-		fadedBG(blackBG, coloring, "block");
-		whatUp(copyPaste,"0", 250);
-		rplNum1.style.display = "inline";
-		rplNum2.style.display = "inline";
-		rplNum3.style.display = "inline";
-
 		
 		switch(numSwitch[selection].value){
-			case outlook10.value:
-				textSwap(client,outlook10.name);
-				dropD(vidTut,outlook10.link);
+			case "plsWorkshopInvite":
+				textSwap(email_name, "PL+S Workshop Invitation");
+				textSwap(email_perc, stats.plsWorkshopInvite);
+				textSwap(deliv, totRec.plsWorkshopInvite);
+				textSwap(opens, uniqOpen.plsWorkshopInvite);
+				textSwap(uniqueClicks, uniqClicks.plsWorkshopInvite);
+				textSwap(totalClicks, totalClicks.plsWorkshopInvite);
+				setPieChart('plsWorkshopInvite');
+				dropD(vidTut, links['plsWorkshopInvite']);
 				break;
-			case outlook13.value:
-				textSwap(client,outlook13.name);
-				dropD(vidTut,outlook13.link);
+			case "productUpdate":
+				textSwap(email_name, "Product News Update");
+				textSwap(email_perc, stats.amieLaunch);
+				textSwap(deliv, totRec.amieLaunch);
+				textSwap(opens, uniqOpen.amieLaunch);
+				textSwap(uniqueClicks, uniqClicks.amieLaunch);
+				textSwap(totalClicks, totalClicks.amieLaunch);
+				setPieChart('amieLaunch');
+				dropD(vidTut, links['amieLaunch']);
 				break;
-			case outlook11.value:
-				textSwap(client,outlook11.name);
-				dropD(vidTut,outlook11.link);
+			case "holidayVid":
+				textSwap(email_name, "Holiday Video");
+				textSwap(email_perc, stats.holidayVid);
+				textSwap(deliv, totRec.holidayVid);
+				textSwap(opens, uniqOpen.holidayVid);
+				setPieChart('holidayVid');
+				dropD(vidTut, links['holidayVid']);
 				break;
-			case macMail.value:
-				textSwap(client,macMail.name);
-				dropD(vidTut,macMail.link);
+			case "ddrPrice":
+				textSwap(email_name, "DDR Price Increase");
+				textSwap(email_perc, stats.ddrPrice);
+				textSwap(deliv, totRec.ddrPrice);
+				textSwap(opens, uniqOpen.ddrPrice);
+				setPieChart('ddrPrice');
+				dropD(vidTut, links['ddrPrice']);
+				break;
+			case "ddrVideo":
+				textSwap(email_name, "DDR Video");
+				textSwap(email_perc, stats.ddrVideo);
+				textSwap(deliv, totRec.ddrVideo);
+				textSwap(opens, uniqOpen.ddrVideo);
+				setPieChart('ddrVideo');
+				dropD(vidTut, links['ddrVideo']);
+				break;
+			case "seasonThanks":
+				textSwap(email_name, "Season of Thanks");
+				textSwap(email_perc, stats.seasonThanks);
+				textSwap(deliv, totRec.seasonThanks);
+				textSwap(opens, uniqOpen.seasonThanks);
+				setPieChart('seasonThanks');
+				dropD(vidTut, links['seasonThanks']);
+				break;
+			case "ssDMB":
+				textSwap(email_name, "Sound Stories: DMB");
+				textSwap(email_perc, stats.ssDMB);
+				textSwap(deliv, totRec.ssDMB);
+				textSwap(opens, uniqOpen.ssDMB);
+				setPieChart('ssDMB');
+				dropD(vidTut, links['ssDMB']);
+				break;
+			case "ssMetallica":
+				textSwap(email_name, "Sound Stories: Metallica");
+				textSwap(email_perc, stats.ssMetallica);
+				textSwap(deliv, totRec.ssMetallica);
+				textSwap(opens, uniqOpen.ssMetallica);
+				setPieChart('ssMetallica');
+				dropD(vidTut, links['ssMetallica']);
+				break;
+			case "soundSource":
+				textSwap(email_name, "Sound Source");
+				textSwap(email_perc, stats.soundSource);
+				textSwap(deliv, totRec.soundSource);
+				textSwap(opens, uniqOpen.soundSource);
+				setPieChart('soundSource');
+				dropD(vidTut, links['soundSource']);
+				break;
+			case "leopardEOY":
+				textSwap(email_name, "LEOPARD EOY");
+				textSwap(email_perc, stats.leopardEOY);
+				textSwap(deliv, totRec.leopardEOY);
+				textSwap(opens, uniqOpen.leopardEOY);
+				setPieChart('leopardEOY');
+				dropD(vidTut, links['leopardEOY']);
 				break;
 			default:
 				console.log("doesn't work!");
 				break;
 		}
-
+		return false;
 		/*
 		//////////////////////////////////////////////////////////
 
@@ -253,207 +387,54 @@ function init(){
 
 		//////////////////////////////////////////////////////////
 		*/
-
-		//If numbers aren't entered, but extensions are, reset extensions
-		if((number.length <= 3) && (number2.length <= 3)){
-			ext1 = "";
-			ext2 = "";
-		}else if(number.length <= 3){
-			ext1 = "";
-		}else if(number2.length <= 3){
-			ext2 = "";
-		}
-
-		//if name, position, number, and email are all valid entries
-		if((name.length > 0) && (position.length >0) && (email.length > 0)){
-
-			//Extension swaps (executed if extensions are entered)
-			extSwap(rplExt1,ext1);
-			extSwap(rplExt2,ext2);
-
-			//Global textSwaps — those that'll be applied regardless of what numbers are omitted
-			textSwap(rplName,name);
-			textSwap(rplTitle,position);
-			textSwap(rplEmail,email);
-
-			//if All numbers have been entered
-			if((number.length > 3) && (number2.length > 3) && (number3.length > 3)){
-
-				//All other text swaps
-				textSwap(rplNum1, number);
-				textSwap(rplNum2, number2);
-				textSwap(rplNum3, number3);
-
-				//insert <br />
-				replHTML(breakInsert, htmlBR);
-				replHTML(breakInsert2, htmlBR);
-				replHTML(breakInsert3, htmlBR);
-
-				//Reload init()
-				init();
-
-			//if the first two numbers have been entered but not the cell
-			}else if((number.length > 3) && (number2.length > 3) && (number3.length <= 3)){
-
-				//All other text swaps
-				textSwap(rplNum1,number);
-				textSwap(rplNum2,number2);
-
-				//insert <br />
-				replHTML(breakInsert, htmlBR);
-				replHTML(breakInsert2, htmlBR);
-				replHTML(breakInsert3,'');
-
-				//Turn off the 3rd number
-				rplNum3.style.display = "none";
-
-				//Reload init()
-				init();
-
-			//if the first telephone number has been entered but not the second number
-			}else if((number.length > 3) && (number2.length <= 3) && (number3.length > 3)){
-
-				//All other text swaps
-				textSwap(rplNum1,number);
-				textSwap(rplNum2,number2);
-				textSwap(rplNum3,number3);
-
-				//insert <br />
-				replHTML(breakInsert, htmlBR);
-				replHTML(breakInsert2,'');
-				replHTML(breakInsert3, htmlBR);
-
-				//Turn off the 2nd number
-				rplNum2.style.display = "none";
-
-				//Reload init()
-				init();
-
-			//if only the second and cell numbers have been entered
-			}else if((number.length <= 3) && (number2.length > 3) && (number3.length > 3)){
-
-				//All other text swaps
-				textSwap(rplNum1,number);
-				textSwap(rplNum2,number2);
-				textSwap(rplNum3,number3);
-
-				//insert <br />
-				replHTML(breakInsert, '');
-				replHTML(breakInsert2, htmlBR);
-				replHTML(breakInsert3, htmlBR);
-
-				//Turn off the 2nd number
-				rplNum1.style.display = "none";
-
-				//Reload init()
-				init();
-
-			//if only the first telephone number has been entered
-			}else if((number.length > 3) && (number2.length <= 3) && (number3.length <= 3)){
-
-				//All other text swaps
-				textSwap(rplNum1,number);
-
-				//insert <br />
-				replHTML(breakInsert, htmlBR);
-				replHTML(breakInsert2,'');
-				replHTML(breakInsert3,'');
-
-				//Turn off 2nd and 3rd numbers
-				rplNum2.style.display = "none";
-				rplNum3.style.display = "none";
-
-				//Reload init()
-				init();
-
-			//if only the second number has been entered
-			}else if((number.length <= 3) && (number2.length > 3) && (number3.length <= 3)){
-
-				//All other text swaps
-				textSwap(rplNum2,number2);
-
-				//insert <br />
-				replHTML(breakInsert, '');
-				replHTML(breakInsert2, htmlBR);
-				replHTML(breakInsert3, '');
-
-				//Turn off 2nd and 3rd numbers
-				rplNum1.style.display = "none";
-				rplNum3.style.display = "none";
-
-				//Reload init()
-				init();
-
-			//if only the cell has been entered
-			}else if((number.length <= 3) && (number2.length <= 3) && (number3.length > 3)){
-
-				//All other text swaps
-				textSwap(rplNum3,number3);
-
-				//insert <br />
-				replHTML(breakInsert, '');
-				replHTML(breakInsert2, '');
-				replHTML(breakInsert3, htmlBR);
-
-				//Turn off 2nd and 3rd numbers
-				rplNum1.style.display = "none";
-				rplNum2.style.display = "none";
-
-				//Reload init()
-				init();
-
-			//if none of the numbers were entered
-			}else if((number.length <= 3) && (number2.length <= 3) && (number3.length <= 3)){
-
-				//All other text swaps
-				textSwap(rplNum1,number);
-
-				//insert <br />
-				replHTML(breakInsert, '');
-				replHTML(breakInsert2, '');
-				replHTML(breakInsert3, '');
-
-				//Turn off 2nd and 3rd numbers
-				rplNum1.style.display = "none";
-				rplNum2.style.display = "none";
-				rplNum3.style.display = "none";
-
-				//Reload init()
-				init();
-			}
-		}else{
-				alert("Bad Entry: one of your inputs was incorrect.");
-		}
-		return false;
 	}
+
 	//close results
 	function deAtomize(){
 		if(formPos.style.left === "0px"){
 			formPos.style.left = "-100%";
 			fadedBG(blackBG,erasing,"none",500);
-			vidIllum(vidOverlay,vidTut,"0","none",500);
+			vidIllum(vidTut,"0");
+			setTimeout(function(){
+				vidOverlay.style.display = "none";
+			},50);
 		}else{
 			alert("FAIL!!!");//Just reassurance I haven't completely screwed up
 		}
 	}
 	//close results
-	function miTe(){
-		if((vidTut.style.opacity  === "0") && (vidOverlay.style.display === "none")){
-			console.log("this is vidOverlay (if): " + vidOverlay);
-			vidIllum(vidOverlay,vidTut,"1","block",500);
-			return false;
+	function mite(){
+		if(window.innerWidth > 992){
+			vidOverlay.style.display = "block";
+				if(vidTut.style.opacity  === "0"){
+					setTimeout(function(){
+						vidIllum(vidTut,"1");
+						vidTut.width = Math.floor(window.innerWidth * 0.5);
+						vidTut.height = Math.floor(vidTut.width * 0.56);
+					},50);
+				}else{
+					setTimeout(function(){
+						vidIllum(vidTut,"0");
+					},50);
+				}
 		}else{
-			console.log("this is vidOverlay (else): " + vidOverlay);
-			vidIllum(vidOverlay,vidTut,"0","none",500);
-			return false;
+			vidOverlay.style.display = "none";
+		}
+		return false;
+	}
+
+	function swarley(){
+		if(window.innerWidth > 1200){
+			vidTut.width = Math.floor(window.innerWidth * 0.5);
+			vidTut.height = Math.floor(vidTut.width * 0.56);
+		}else if(window.innerWidth <= 1200){
+			vidTut.width = Math.floor(window.innerWidth * 0.35);
+			vidTut.height = Math.floor(vidTut.width * 0.56);
 		}
 	}
 
 	//events
-	close.onclick = deAtomize;
-	blackBG.onclick = deAtomize;
 	form.onsubmit = fluxCapacitate;
-	clientLink.onclick = miTe;
-
+	window.onresize = swarley;
 }
 window.onload = init;

@@ -29,10 +29,37 @@
 		      <a href="http://www.meyersound.com/" class="navbar-brand"><img src="img/ms_logo.png" alt="Meyer Sound" /></a>
 		    </div>
 				<ul class="nav navbar-nav navbar-right" id="ms-brand">
-					<a class="navbar-title" href="http://www.meyersound.com/email/msEmailData/index.html">Open Rates: December 2015</a>
+					<a class="navbar-title" href="http://www.meyersound.com/email/msEmailData/index.html">Open Rates: March 2016</a>
 				</ul>
 		</div>
 	</nav>
+	<nav id="email_name_nav" class="navbar navbar-default navbar-fixed-top ms-nav">
+		<div class="container">
+			<div class="col-md-12 navbar-header info-bar">
+				<h1 id="email_name" class="info-nav">Select an Email</h1>
+				<h3 id="sendDate" class="date info-nav">Date</h3>
+				<!--<div>
+					<h2 id="subject" class="subject info-nav">Subject:</h2>
+				</div>-->
+			</div>
+		</div>
+	</nav>
+	<nav id="subject_nav" class="navbar navbar-default navbar-fixed-top ms-nav">
+		<div class="container">
+			<div class="col-md-12 navbar-header subject-bar">
+				<div>
+					<h2 id="subject" class="subject info-nav">Subject:</h2>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--<nav id="subject_nav" class="navbar navbar-default navbar-fixed-top ms-nav">
+		<div class="container">
+			<div class="col-md-12 navbar-header info-bar">
+				<h1 id="email_name">Select an Email</h1>
+			</div>
+		</div>
+	</nav>-->
 	<section class="container">
 		<div class="row">
 			<div class="col-xs-6 col-sm-6 col-md-4 instructionsForm leftSide">
@@ -42,16 +69,19 @@
 					  		<fieldset>
 					  			<label>Email Data:</label>
 					  			<select id="numSwitch">
-					  				<option value="amieDemo">Amie Demo Launch</option>
-					  				<option value="amieLaunch">Amie Launch</option>
-									<option value="holidayVid">Holiday Video</option>
-					  				<option value="ddrPrice">DDR Price Increase</option>
-					  				<option value="ddrVideo">DDR Video</option>
-					  				<option value="seasonThanks">Season of Thanks</option>
-					  				<option value="ssDMB">Sound Stories: DMB</option>
-					  				<option value="ssMetallica">Sound Stories: Metallica</option>
+					  				<option value="default">Select an Email</option>
+					  				<option value="plsWorkshopInvite">PL+S Workshop Invitation</option>
+					  				<option value="productUpdate">Product News Update</option>
+									<option value="soundStories">Sound Stories</option>
+					  				<option value="thinkingSound">Thinking Sound</option>
+					  				<option value="constDemo">Constellation Demo: Lithuania</option>
+					  				<option value="plsEmailOne">Prolight + Sound: Email 1</option>
+					  				<option value="plsWorkshopRemind">PL+S: Workshop Reminder</option>
 					  				<option value="soundSource">Sound Source</option>
-					  				<option value="leopardEOY">LEOPARD EOY</option>
+					  				<option value="ddPLS">D&amp;D News: PLS</option>
+					  				<option value="seminarBogota">Bogota Seminar</option>
+					  				<option value="ddProduct">D&amp;D News: Product Update</option>
+					  				<option value="plsEmailTwo">Prolight + Sound: Email 2</option>
 					  			</select>
 					    		<input id="submit" type="submit" value="submit" />
 					  		</fieldset>
@@ -61,33 +91,43 @@
 				<div class="row">
 						<div class="col-md-12">
 							<figure>
-							<h1 id="email_name">Default</h1>
-							  <figcaption>
-							    Unique Opens
-							  </figcaption>
-							<div class="pieOverlay">
-								<h2><span id="perc">100</span>%</h2>
-								<div class="pieBG"></div>
-							</div>
-							  <svg width="200" height="200" class="chart">
-							    <circle r="50" cx="100" cy="100" class="pie"/>
-							  </svg>
-							  <figcaption class="info-cont">
-							  	<div class="inl">
-							  		<h3>Total Delivered</h3>
-							  		<h2 id="deliv">12222</h2>
-							  	</div>
-							  	<div class="inl">
-									<h3>Unique Opens</h3>
-							  		<h2 id="opens">12222</h2>
-							  	</div>
-							  </figcaption>
+								<!--<h1 id="email_name">Select an Email</h1>-->
+								<!--<h2 id="subject" class="subject">Subject:</h2>-->
+								<!--<h2 id="sendDate" class="subject">Date:</h2>-->
+								 <figcaption>
+								    <span class="title">Unique Opens</span>
+								 </figcaption>
+								<div class="pieOverlay">
+									<h2><span id="perc">100</span>%</h2>
+									<div class="pieBG"></div>
+								</div>
+								  <svg width="200" height="200" class="chart">
+								    <circle r="50" cx="100" cy="100" class="pie"/>
+								  </svg>
+								  <figcaption class="info-cont">
+								  	<div class="inl">
+								  		<h3>Total Delivered</h3>
+								  		<h2 id="deliv">12222</h2>
+								  	</div>
+								  	<div class="inl">
+										<h3>Unique Opens</h3>
+								  		<h2 id="opens">12222</h2>
+								  	</div>
+								  	<div class="inl">
+								  		<h3>Total Clicks</h3>
+								  		<h2 id="total-clicks">12222</h2>
+								  	</div>
+								  	<div class="inl">
+										<h3>Unique Clicks</h3>
+								  		<h2 id="unique-clicks">12222</h2>
+								  	</div>
+								  </figcaption>
 							</figure>
 						</div>
 				</div>
 			</div>
 			<div id="iFrame" class="col-xs-6 col-sm-6 col-md-8 email_preview">
-				<iframe id="vid-tut" width="100%" height="400" src="http://www.meyersound.com/mail/2016/1601_ise_constellation_training/index.html" frameborder="0" allowfullscreen></iframe>
+				<iframe id="vid-tut" width="100%" height="400" src="http://www.meyersound.com/mail/2016/1601_ise_constellation_training/index.html" frameborder="0" allowfullscreen seamless="seamless"></iframe>
 			</div>
 
 		</div>
