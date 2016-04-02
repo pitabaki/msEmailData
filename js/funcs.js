@@ -22,10 +22,19 @@ function textSwap(id,message){
 	//measure taken in reducing sloppy coding
 	'use strict';
 	var output = id;
-	if(output.textContent !== 'undefined'){
-		output.textContent = message;
+	if(typeof message !== "string"){
+		var conversion = message.toString();
+		if(output.textContent !== 'undefined'){
+			output.textContent = conversion;
+		}else{
+			output.innerText = conversion;
+		}
 	}else{
-		output.innerText = message;
+		if(output.textContent !== 'undefined'){
+			output.textContent = message;
+		}else{
+			output.innerText = message;
+		}
 	}
 }
 
