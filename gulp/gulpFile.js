@@ -3,10 +3,12 @@ var gulp = require('gulp'),
 	conCat = require('gulp-concat'),
 	jsMinify = require('gulp-minify'),
 	gutil = require('gulp-util'),
+	ugly = require('gulp-uglify'),
 	sass = require('gulp-sass');
 
 var jsSources = [
 	'../js/funcs.js',
+	'../js/objects.js',
 	'../js/conversion.js'
 	];
 
@@ -16,15 +18,13 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('../css/min'));
 });
 
-gulp.task('jsConcat', function(){
+gulp.task('scripty', function(){
 	gulp.src(jsSources)
 		.pipe(conCat('script.js'))
 		.pipe(gulp.dest('../js'))
-});
-
-gulp.task('minify-js', function(){
-	gulp.src('../js/script.js')
-		.pipe(gulp.dest('../js'))
+		.pipe(jsMinify({}))
+		.pipe(ugly())
+		.pipe(gulp.dest('../js/min'))
 });
 
 gulp.task('sass', function () {

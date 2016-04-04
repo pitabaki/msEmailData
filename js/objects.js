@@ -8,7 +8,9 @@
 		subject: "RSVP | Rental Market Workshop at Prolight + Sound",
 		date: "March 1st, 2016",
 		url: "http://meyersound.com/mail/2016/1603_const_demo_lithu/index.html",
-		percentage: Math.round(198/465 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var productUpdate = {
@@ -21,7 +23,9 @@
 		subject: "Meyer Sound Product Updates: MAPP, Compass, SIM, 3D Measurement",
 		date: "March 3rd, 2016",
 		url:"http://www.meyersound.com/mail/2016/160303_ddr/index.html/",
-		percentage: Math.round(245/577 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var soundStories = {
@@ -34,7 +38,9 @@
 		subject: "LEO Family Powers 300,000-Strong Papal Event in Mexico",
 		date: "March 2nd, 2016",
 		url: "http://www.meyersound.com/news/sound_stories_archives/sound_stories_239.html",
-		percentage: Math.round(6803/29120 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var thinkingSound = {
@@ -47,7 +53,9 @@
 		subject: "Jose Rivera on Mixing Marc Anthony: 360 Degrees of Emotion",
 		date: "March 8th, 2016",
 		url: "http://www.meyersound.com/mail/newsletter/thinkingsound035.html",
-		percentage: Math.round(8178/33302 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var constDemo = {
@@ -60,7 +68,9 @@
 		subject: "You're Invited to Hear Constellation | Lithuania, March 14th",
 		date: "March 8th, 2016",
 		url: "http://meyersound.com/mail/2016/1603_const_demo_lithu/index.html",
-		percentage: Math.round(20/30 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var plsEmailOne = {
@@ -73,7 +83,9 @@
 		subject: "Join Us at Prolight + Sound | LEOPARD Presentations Daily",
 		date: "March 15th, 2016",
 		url: "http://www.meyersound.com/mail/2016/1603_pls_promo_01/index.html",
-		percentage: Math.round(8073/34949 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var plsWorkshopRemind = {
@@ -86,7 +98,9 @@
 		subject: "Reminder | RSVP Dealer Workshop",
 		date: "March 16th, 2016",
 		url: "http://meyersound.com/mail/2016/160315_dealer_workshop_invitation/index.html",
-		percentage: Math.round(194/463 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var soundSource = {
@@ -99,7 +113,9 @@
 		subject: "Sound Source Monthly Education Newsletter | March 2016",
 		date: "March 21st, 2016",
 		url: "http://www.meyersound.com/mail/seminars.html",
-		percentage: Math.round(6666/31068 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var ddPLSInternal = {
@@ -112,7 +128,9 @@
 		subject: "Looking Forward to PL+S",
 		date: "March 22nd, 2016",
 		url: "http://meyersound.com/mail/2016/160322_ddr_internal/index.html",
-		percentage: Math.round(60/100 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var ddPLS = {
@@ -125,7 +143,9 @@
 		subject: "Looking Forward to PL+S",
 		date: "March 23rd, 2016",
 		url: "http://meyersound.com/mail/2016/160323_ddr/index.html",
-		percentage: Math.round(180/464 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var seminarBogota = {
@@ -138,7 +158,9 @@
 		subject: "Seminario de Diseño de Sistemas en Bogotá, Colombia.",
 		date: "March 28th, 2016",
 		url: "http://meyersound.com/mail/2016/education/funda_bogota_1603/index.html",
-		percentage: Math.round(180/464 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var ddProductInternal = {
@@ -151,7 +173,9 @@
 		subject: "New Product Announcement | MJF-208, MDM-5000, LYON-WXT",
 		date: "March 28th, 2016",
 		url: "http://meyersound.com/mail/2016/160328_ddr_internal/index.html",
-		percentage: Math.round(76/128 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var ddProduct = {
@@ -164,7 +188,9 @@
 		subject: "New Product Announcement | MJF-208, MDM-5000, LYON-WXT",
 		date: "March 29th, 2016",
 		url: "http://meyersound.com/mail/2016/160329_ddr/index.html",
-		percentage: Math.round(171/473 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var plsEmailTwo = {
@@ -177,7 +203,9 @@
 		subject: "New Products at Prolight + Sound",
 		date: "March 30th, 2016",
 		url: "http://www.meyersound.com/mail/2016/1603_pls_promo_02/index.html",
-		percentage: Math.round(7354/34836 * 100)
+		percentage: function(){
+			return Math.round(this.opened/this.received * 100);
+		}
 	};
 
 	var defaultObj = {
@@ -190,5 +218,7 @@
 		subject: "Subject",
 		date: "Date",
 		url: "http://www.meyersound.com",
-		percentage: Math.round(100/100 * 100)
+		percentage: function(){
+			return Math.round(100/100 * 100);
+		}
 	};
