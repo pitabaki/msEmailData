@@ -7,7 +7,7 @@
 		uniqClicks: 7,
 		subject: "RSVP | Rental Market Workshop at Prolight + Sound",
 		date: "March 1st, 2016",
-		url: "http://meyersound.com/mail/2016/1603_const_demo_lithu/index.html",
+		url: "http://meyersound.com/mail/2016/1603_dealer_workshop_invitation/index.html",
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
