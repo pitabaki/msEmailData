@@ -58,6 +58,25 @@ var util = {
 		}else{
 			console.log("Link passed to dropD was not a string.");
 		}
+	},
+
+	percentageCalc: function(array){
+		if((typeof array === "object") && (array.length > 0)){
+			var total = 0;
+			for(var i = 0;i < array.length; i++){
+				if(typeof array[i] === "number"){
+					total += array[i];
+				}else if((typeof parseFloat(array[i]) === "number") && (isNaN(parseFloat(array[i]) + 1)) === false){
+                  total += parseFloat(array[i]);
+                  console.log(array[i] + " was passed and added to total!");
+                }else{
+					console.log(array[i] + " was an incorrect value.");
+				}
+			}
+			return Math.round(total/array.length);
+		}else{
+			console.log("Error: array passed with incorrect values.");
+		}
 	}
 };
 	var plsWorkshopInvite = {
@@ -69,7 +88,7 @@ var util = {
 		uniqClicks: 7,
 		subject: "RSVP | Rental Market Workshop at Prolight + Sound",
 		date: "March 1st, 2016",
-		url: "http://meyersound.com/mail/2016/1603_const_demo_lithu/index.html",
+		url: "http://meyersound.com/mail/2016/1603_dealer_workshop_invitation/index.html",
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
@@ -279,7 +298,7 @@ var util = {
 		uniqClicks: 100,
 		subject: "Subject",
 		date: "Date",
-		url: "http://www.meyersound.com",
+		url: "http://www.meyersound.com/mail/blank.html",
 		percentage: function(){
 			return Math.round(100/100 * 100);
 		}
@@ -317,6 +336,10 @@ function init(){
 	var form = util.key("form"),
 		email_name = util.key("email_name"),
 		email_perc = util.key("perc"),
+		selectHighlight = util.key("selection-highlight"),
+		submitHighlight = util.key("submit-highlight"),
+		submitButton = util.key("submit"),
+		defaultEmail = util.key("default"),
 		iFrame = util.key("iFrame"),
 		vidTut = util.key("vid-tut"),
 		rplName = util.key("rplName"),
@@ -374,7 +397,8 @@ function init(){
 		//captures client selected
 		var numSwitch = util.key("numSwitch"),
 		selection = numSwitch.selectedIndex;
-		
+		defaultEmail.style.display = "none";
+
 		switch(numSwitch[selection].value){
 			case "plsWorkshopInvite":
 				//alert("works");
@@ -421,6 +445,7 @@ function init(){
 				break;
 			default:
 				calculations(defaultObj);
+				defaultEmail.style.display = "block";
 				break;
 		}
 		return false;

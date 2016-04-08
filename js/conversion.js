@@ -31,6 +31,10 @@ function init(){
 	var form = util.key("form"),
 		email_name = util.key("email_name"),
 		email_perc = util.key("perc"),
+		selectHighlight = util.key("selection-highlight"),
+		submitHighlight = util.key("submit-highlight"),
+		submitButton = util.key("submit"),
+		defaultEmail = util.key("default"),
 		iFrame = util.key("iFrame"),
 		vidTut = util.key("vid-tut"),
 		rplName = util.key("rplName"),
@@ -88,7 +92,8 @@ function init(){
 		//captures client selected
 		var numSwitch = util.key("numSwitch"),
 		selection = numSwitch.selectedIndex;
-		
+		defaultEmail.style.display = "none";
+
 		switch(numSwitch[selection].value){
 			case "plsWorkshopInvite":
 				//alert("works");
@@ -135,6 +140,7 @@ function init(){
 				break;
 			default:
 				calculations(defaultObj);
+				defaultEmail.style.display = "block";
 				break;
 		}
 		return false;

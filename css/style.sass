@@ -280,9 +280,7 @@ figcaption h2
 	+borderRadius(4px)
 
 .highlight
-	padding: 4px 6px
-	@extend .bold
-	background-color: $ms_yellow
+	color: $ms_blue
 
 .font-brand
 	margin-top: 6px
@@ -292,25 +290,6 @@ figcaption h2
 
 #copyPaste
 	transition: all 0.5s ease
-
-.rowPad
-	margin-right: 1em
-
-.overhang
-	margin: 5px auto
-	padding: 20px
-	text-align: left
-	background-color: $typeWhite
-	z-index: 99999999999999
-	+borderRadius(8px)
-
-.overhang h2,
-.overhang h4
-	margin: 0 auto
-	line-height: 32px
-
-.overhang h2
-	padding-bottom: 10px
 
 .copy_button
 	margin-top: 40px
@@ -406,19 +385,6 @@ button input
 	font-family: $typeface
 	color: $ms_black
 
-.copyInst
-	@extend .instructions
-	margin-top: 0
-	border: 1px solid $ms_ltGrey
-	background-color: $pureWhite
-	+borderRadius(8px)
-
-.important
-	border-left: 4px solid $ms_crimson
-	//margin-top: 4px
-	//height: 6px
-	//background-color: $ms_crimsonTrans
-
 .instructions ol
 	+absoluteZero
 	margin-left: 30px
@@ -475,6 +441,26 @@ ol
 
 .phone-ext input
 	width: 20%
+
+.overlay
+	@extend .video-overlay
+	margin-top: 35%
+	text-align: center
+
+.overlay>.copy
+	margin: 0 auto
+	width: 65%
+
+.hover
+	+boxShadow(0px 0px 20px $ms_blue)
+	transition: all 0.5s ease
+
+#default
+	margin: 0 auto
+
+.copy h1
+	font-size: 28px
+	line-height: 34px
 
 @media screen and (max-width: 1200px)
 	#blackBG

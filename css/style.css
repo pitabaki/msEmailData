@@ -261,12 +261,12 @@ figcaption h2 {
 .chartOverlay svg {
   border-radius: 25%; }
 
-.video-overlay {
+.video-overlay, .overlay {
   position: absolute;
   width: 100%;
   z-index: 199999; }
 
-.video-overlay iframe {
+.video-overlay iframe, .overlay iframe {
   margin-right: 10%; }
 
 #videoOverlay {
@@ -277,7 +277,7 @@ figcaption h2 {
   opacity: 1;
   transition: all 0.5s ease; }
 
-.bold, .highlight {
+.bold {
   padding: 0;
   font-weight: bold;
   border-radius: 4px;
@@ -285,8 +285,7 @@ figcaption h2 {
   -moz-border-radius: 4px; }
 
 .highlight {
-  padding: 4px 6px;
-  background-color: #f4d422; }
+  color: #5a85d7; }
 
 .font-brand {
   margin-top: 6px;
@@ -296,27 +295,6 @@ figcaption h2 {
 
 #copyPaste {
   transition: all 0.5s ease; }
-
-.rowPad {
-  margin-right: 1em; }
-
-.overhang {
-  margin: 5px auto;
-  padding: 20px;
-  text-align: left;
-  background-color: #eeeded;
-  z-index: 99999999999999;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px; }
-
-.overhang h2,
-.overhang h4 {
-  margin: 0 auto;
-  line-height: 32px; }
-
-.overhang h2 {
-  padding-bottom: 10px; }
 
 .copy_button {
   margin-top: 40px;
@@ -407,30 +385,19 @@ button input {
   -ms-user-select: all;
   user-select: all; }
 
-.instructions, .email_preview, .copyInst, .instructionsForm {
+.instructions, .email_preview, .instructionsForm {
   margin-top: 2%;
   padding: 1.5em 2em 1.5em; }
 
 .email_preview {
   padding: 0; }
 
-.instructions h2, .email_preview h2, .copyInst h2, .instructionsForm h2,
-.instructions li, .email_preview li, .copyInst li, .instructionsForm li {
+.instructions h2, .email_preview h2, .instructionsForm h2,
+.instructions li, .email_preview li, .instructionsForm li {
   font-family: "HelveticaNeue", Helvetica, Arial, sans-serif;
   color: #231f20; }
 
-.copyInst {
-  margin-top: 0;
-  border: 1px solid #d5d5d2;
-  background-color: #ffffff;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px; }
-
-.important {
-  border-left: 4px solid #9d053b; }
-
-.instructions ol, .email_preview ol, .copyInst ol, .instructionsForm ol {
+.instructions ol, .email_preview ol, .instructionsForm ol {
   margin: 0 auto;
   padding: 0;
   margin-left: 30px; }
@@ -487,6 +454,27 @@ ol li {
 .phone-ext input {
   width: 20%; }
 
+.overlay {
+  margin-top: 35%;
+  text-align: center; }
+
+.overlay > .copy {
+  margin: 0 auto;
+  width: 65%; }
+
+.hover {
+  box-shadow: 0px 0px 20px #5a85d7;
+  -webkit-box-shadow: 0px 0px 20px #5a85d7;
+  -moz-box-shadow: 0px 0px 20px #5a85d7;
+  transition: all 0.5s ease; }
+
+#default {
+  margin: 0 auto; }
+
+.copy h1 {
+  font-size: 28px;
+  line-height: 34px; }
+
 @media screen and (max-width: 1200px) {
   #blackBG {
     height: 110%;
@@ -510,7 +498,7 @@ ol li {
     width: 100%; }
   .overhang {
     width: 100%; }
-  .instructions, .email_preview, .copyInst, .instructionsForm {
+  .instructions, .email_preview, .instructionsForm {
     margin-top: 14%; }
   .copyInst {
     margin-top: 0; }
@@ -541,7 +529,7 @@ ol li {
     padding: 0.75em 0; }
   form {
     width: 100%; }
-  .instructions, .email_preview, .copyInst, .instructionsForm {
+  .instructions, .email_preview, .instructionsForm {
     margin-top: 20%; }
   .instructionsForm {
     margin-top: 40%; }
