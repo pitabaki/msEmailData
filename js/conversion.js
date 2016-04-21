@@ -45,7 +45,6 @@ function init(){
 		opens = util.key("opens"),
 		totalClicks = util.key("total-clicks"),
 		uniqueClicks = util.key("unique-clicks");
-
 	vidTut.height = Math.floor(window.innerHeight * 0.75);
 
 	var total = 314,
@@ -65,6 +64,28 @@ function init(){
 		util.dropD(vidTut, object.url);
 	}
 
+	function objSize(obj) {
+		var size = 0, key;
+		for (key in obj){
+    		if (obj.hasOwnProperty(key)) size++;
+  		}
+		return size;
+	}
+
+	function objPrint(obj,arr) {
+		var key;
+		for (key in obj) {
+			return (obj[key][arr]);
+		}
+	}
+	
+	function objPer(obj){
+		var key;
+		for (key in obj){
+			console.log(obj[key].percentage());
+		}
+	}
+
 	// work out percentage as a result of total
 	var numberFixer = function(num){
 	  var result = ((num * total) / 100);
@@ -72,7 +93,6 @@ function init(){
 	};
 
 	// when you click a button setPieChart and setActiveClass
-
 
 
 	// Set up default settings
@@ -95,7 +115,7 @@ function init(){
 		defaultEmail.style.display = "none";
 
 		switch(numSwitch[selection].value){
-			case "plsWorkshopInvite":
+			case plsWorkshopInvite.title:
 				//alert("works");
 				calculations(plsWorkshopInvite);
 				break;
