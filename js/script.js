@@ -79,7 +79,8 @@ var util = {
 		}
 	}
 };
-	var plsWorkshopInvite = {
+var objectCont = {
+	 plsWorkshopInvite : {
 		name: "PL+S Workshop Invitation",
 		title: "plsWorkshopInvite",
 		received: 465,
@@ -92,9 +93,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var productUpdate = {
+	 productUpdate : {
 		name: "Product News Update",
 		title: "productUpdate",
 		received: 577,
@@ -107,9 +108,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var soundStories = {
+	 soundStories : {
 		name: "Sound Stories",
 		title: "soundStories",
 		received: 29120,
@@ -122,9 +123,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var thinkingSound = {
+	 thinkingSound : {
 		name: "Thinking Sound",
 		title: "thinkingSound",
 		received: 33302,
@@ -137,9 +138,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var constDemo = {
+	 constDemo : {
 		name: "Constellation Demo: Lithuania",
 		title: "constDemo",
 		received: 30,
@@ -152,9 +153,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var plsEmailOne = {
+	 plsEmailOne : {
 		name: "Prolight + Sound: Email 1",
 		title: "plsEmailOne",
 		received: 34949,
@@ -167,9 +168,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var plsWorkshopRemind = {
+	 plsWorkshopRemind : {
 		name: "Prolight + Sound: Workshop Reminder",
 		title: "plsWorkshopRemind",
 		received: 463,
@@ -182,9 +183,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var soundSource = {
+	 soundSource : {
 		name: "Sound Source",
 		title: "soundSource",
 		received: 31068,
@@ -197,9 +198,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var ddPLSInternal = {
+	 ddPLSInternal : {
 		name: "D&D News: PLS Internal",
 		title: "ddPLSInternal",
 		received: 100,
@@ -212,9 +213,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var ddPLS = {
+	 ddPLS : {
 		name: "D&D News: PLS",
 		title: "ddPLS",
 		received: 464,
@@ -227,9 +228,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var seminarBogota = {
+	 seminarBogota : {
 		name: "Bogota Seminar",
 		title: "seminarBogota",
 		received: 10594,
@@ -242,9 +243,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var ddProductInternal = {
+	 ddProductInternal : {
 		name: "D&D News: Product Update Internal",
 		title: "ddProductInternal",
 		received: 128,
@@ -257,9 +258,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var ddProduct = {
+	 ddProduct : {
 		name: "D&D News: Product Update Internal",
 		title: "ddProduct",
 		received: 473,
@@ -272,9 +273,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var plsEmailTwo = {
+	 plsEmailTwo : {
 		name: "Prolight + Sound: Email 2",
 		title: "plsEmailTwo",
 		received: 34836,
@@ -287,9 +288,9 @@ var util = {
 		percentage: function(){
 			return Math.round(this.opened/this.received * 100);
 		}
-	};
+	},
 
-	var defaultObj = {
+	 defaultObj : {
 		name: "Select an Email",
 		title: "defaultObj",
 		received: 100,
@@ -302,7 +303,8 @@ var util = {
 		percentage: function(){
 			return Math.round(100/100 * 100);
 		}
-	};
+	},
+};
 /*
 
 Email Signature Generator
@@ -350,12 +352,25 @@ function init(){
 		opens = util.key("opens"),
 		totalClicks = util.key("total-clicks"),
 		uniqueClicks = util.key("unique-clicks");
-	$("body").html("something");
+
 	vidTut.height = Math.floor(window.innerHeight * 0.75);
 
 	var total = 314,
 	    pie = document.querySelector('.pie'),
 	    activeClass = 'active';
+
+	$.getJSON( "json/object.json", function( data ) {
+		var items = [];
+		$.each( data, function( key, val ) {
+			var obj = key.val;
+			items.push( "<li id='" + key + "'>" + val.opened + "</li>" );
+		});
+	 
+		$( "<ul/>", {
+			"class": "my-new-list",
+			html: items.join( "" )
+		}).appendTo( "#numSwitch" );
+	});
 
 	function calculations(object){
 		util.textSwap(email_name, object.name);
@@ -378,11 +393,22 @@ function init(){
 		return size;
 	}
 
-	function objPrint(obj) {
+	function objPrint(obj,arr) {
+		var key;
+		for (key in obj) {
+			return (obj[key][arr]);
+		}
+	}
+
+	function objPer(obj){
 		var key;
 		for (key in obj){
-			return obj[key];
+			console.log(obj[key].percentage());
 		}
+	}
+
+	function percent(obj){
+
 	}
 
 	// work out percentage as a result of total
@@ -390,6 +416,7 @@ function init(){
 	  var result = ((num * total) / 100);
 	  return result;
 	};
+
 
 	// when you click a button setPieChart and setActiveClass
 

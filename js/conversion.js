@@ -45,11 +45,25 @@ function init(){
 		opens = util.key("opens"),
 		totalClicks = util.key("total-clicks"),
 		uniqueClicks = util.key("unique-clicks");
+
 	vidTut.height = Math.floor(window.innerHeight * 0.75);
 
 	var total = 314,
 	    pie = document.querySelector('.pie'),
 	    activeClass = 'active';
+
+	$.getJSON( "json/object.json", function( data ) {
+		var items = [];
+		$.each( data, function( key, val ) {
+			var obj = key.val;
+			items.push( "<li id='" + key + "'>" + val.opened + "</li>" );
+		});
+	 
+		$( "<ul/>", {
+			"class": "my-new-list",
+			html: items.join( "" )
+		}).appendTo( "#numSwitch" );
+	});
 
 	function calculations(object){
 		util.textSwap(email_name, object.name);
@@ -78,7 +92,7 @@ function init(){
 			return (obj[key][arr]);
 		}
 	}
-	
+
 	function objPer(obj){
 		var key;
 		for (key in obj){
@@ -86,11 +100,16 @@ function init(){
 		}
 	}
 
+	function percent(obj){
+
+	}
+
 	// work out percentage as a result of total
 	var numberFixer = function(num){
 	  var result = ((num * total) / 100);
 	  return result;
 	};
+
 
 	// when you click a button setPieChart and setActiveClass
 
