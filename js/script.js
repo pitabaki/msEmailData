@@ -351,7 +351,9 @@ function init(){
 		deliv = util.key("deliv"),
 		opens = util.key("opens"),
 		totalClicks = util.key("total-clicks"),
-		uniqueClicks = util.key("unique-clicks");
+		uniqueClicks = util.key("unique-clicks"),
+		objLib = [];
+		
 
 	vidTut.height = Math.floor(window.innerHeight * 0.75);
 
@@ -362,16 +364,21 @@ function init(){
 	$.getJSON( "json/object.json", function( data ) {
 		var items = [];
 		$.each( data, function( key, val ) {
-			var obj = key.val;
-			items.push( "<li id='" + key + "'>" + val.opened + "</li>" );
+			objLib.push(key);
+			items.push( "<option value='" + key + "'>" + val.name + "</option>" );
 		});
-	 
-		$( "<ul/>", {
-			"class": "my-new-list",
+		$( "<select/>", {
+			"id": "#numSwitch",
 			html: items.join( "" )
-		}).appendTo( "#numSwitch" );
+		}).appendTo( "#placeholder" );
+		$("#veil").css("opacity","0");
+		setTimeout(function(){$('#veil').css("display","none")}, 1000);
+		console.log(calculations);
+		console.log("inside JSON");
 	});
 
+	console.log(objLib);
+	console.log("outside JSON");
 	function calculations(object){
 		util.textSwap(email_name, object.name);
 		util.textSwap(email_perc, object.percentage());

@@ -1,14 +1,4 @@
-{"plsWorkshopInvite" :
-		{"name": "PL+S Workshop Invitation",
-		"title": "plsWorkshopInvite",
-		"received": 465,
-		"opened": 198,
-		"totClicks": 7,
-		"uniqClicks": 7,
-		"subject": "RSVP | Rental Market Workshop at Prolight + Sound",
-		"date": "March 1st, 2016",
-		"url": "http://meyersound.com/mail/2016/1603_dealer_workshop_invitation/index.html"
-	},
+{
 	"defaultObj" : {
 		"name": "Select an Email",
 		"title": "defaultObj",
@@ -18,5 +8,28 @@
 		"uniqClicks": 100,
 		"subject": "Subject",
 		"date": "Date",
-		"url": "http://www.meyersound.com/mail/blank.html"}
+		"url": "http://www.meyersound.com/mail/blank.html"
+	},
+	"plsWorkshopInvite" : {
+		"name": "PL+S Workshop Invitation",
+		"title": "plsWorkshopInvite",
+		"received": 465,
+		"opened": 198,
+		"totClicks": 7,
+		"uniqClicks": 7,
+		"subject": "RSVP | Rental Market Workshop at Prolight + Sound",
+		"date": "March 1st, 2016",
+		"url": "http://meyersound.com/mail/2016/1603_dealer_workshop_invitation/index.html"
+	},
+	"productUpdate" : {
+		"name": "Product News Update",
+		"title": "productUpdate",
+		"received": 577,
+		"opened": 245,
+		"totClicks": 65,
+		"uniqClicks": 40,
+		"subject": "Meyer Sound Product Updates: MAPP, Compass, SIM, 3D Measurement",
+		"date": "March 3rd, 2016",
+		"url": "http://www.meyersound.com/mail/2016/160303_ddr/index.html/"
+	}
 }
