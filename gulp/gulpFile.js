@@ -8,7 +8,6 @@ var gulp = require('gulp'),
 
 var jsSources = [
 	'../js/funcs.js',
-	'../js/objects.js',
 	'../js/conversion.js'
 	];
 

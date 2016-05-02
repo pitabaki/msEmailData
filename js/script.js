@@ -79,232 +79,6 @@ var util = {
 		}
 	}
 };
-var objectCont = {
-	 plsWorkshopInvite : {
-		name: "PL+S Workshop Invitation",
-		title: "plsWorkshopInvite",
-		received: 465,
-		opened: 198,
-		totClicks: 7,
-		uniqClicks: 7,
-		subject: "RSVP | Rental Market Workshop at Prolight + Sound",
-		date: "March 1st, 2016",
-		url: "http://meyersound.com/mail/2016/1603_dealer_workshop_invitation/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 productUpdate : {
-		name: "Product News Update",
-		title: "productUpdate",
-		received: 577,
-		opened: 245,
-		totClicks: 65,
-		uniqClicks: 40,
-		subject: "Meyer Sound Product Updates: MAPP, Compass, SIM, 3D Measurement",
-		date: "March 3rd, 2016",
-		url:"http://www.meyersound.com/mail/2016/160303_ddr/index.html/",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 soundStories : {
-		name: "Sound Stories",
-		title: "soundStories",
-		received: 29120,
-		opened: 6803,
-		totClicks: 971,
-		uniqClicks: 683,
-		subject: "LEO Family Powers 300,000-Strong Papal Event in Mexico",
-		date: "March 2nd, 2016",
-		url: "http://www.meyersound.com/news/sound_stories_archives/sound_stories_239.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 thinkingSound : {
-		name: "Thinking Sound",
-		title: "thinkingSound",
-		received: 33302,
-		opened: 8178,
-		totClicks: 1182,
-		uniqClicks: 922,
-		subject: "Jose Rivera on Mixing Marc Anthony: 360 Degrees of Emotion",
-		date: "March 8th, 2016",
-		url: "http://www.meyersound.com/mail/newsletter/thinkingsound035.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 constDemo : {
-		name: "Constellation Demo: Lithuania",
-		title: "constDemo",
-		received: 30,
-		opened: 20,
-		totClicks: 4,
-		uniqClicks: 2,
-		subject: "You're Invited to Hear Constellation | Lithuania, March 14th",
-		date: "March 8th, 2016",
-		url: "http://meyersound.com/mail/2016/1603_const_demo_lithu/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 plsEmailOne : {
-		name: "Prolight + Sound: Email 1",
-		title: "plsEmailOne",
-		received: 34949,
-		opened: 8073,
-		totClicks: 573,
-		uniqClicks: 410,
-		subject: "Join Us at Prolight + Sound | LEOPARD Presentations Daily",
-		date: "March 15th, 2016",
-		url: "http://www.meyersound.com/mail/2016/1603_pls_promo_01/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 plsWorkshopRemind : {
-		name: "Prolight + Sound: Workshop Reminder",
-		title: "plsWorkshopRemind",
-		received: 463,
-		opened: 194,
-		totClicks: 4,
-		uniqClicks: 3,
-		subject: "Reminder | RSVP Dealer Workshop",
-		date: "March 16th, 2016",
-		url: "http://meyersound.com/mail/2016/160315_dealer_workshop_invitation/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 soundSource : {
-		name: "Sound Source",
-		title: "soundSource",
-		received: 31068,
-		opened: 6666,
-		totClicks: 431,
-		uniqClicks: 263,
-		subject: "Sound Source Monthly Education Newsletter | March 2016",
-		date: "March 21st, 2016",
-		url: "http://www.meyersound.com/mail/seminars.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 ddPLSInternal : {
-		name: "D&D News: PLS Internal",
-		title: "ddPLSInternal",
-		received: 100,
-		opened: 60,
-		totClicks: 14,
-		uniqClicks: 13,
-		subject: "Looking Forward to PL+S",
-		date: "March 22nd, 2016",
-		url: "http://meyersound.com/mail/2016/160322_ddr_internal/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 ddPLS : {
-		name: "D&D News: PLS",
-		title: "ddPLS",
-		received: 464,
-		opened: 180,
-		totClicks: 18,
-		uniqClicks: 18,
-		subject: "Looking Forward to PL+S",
-		date: "March 23rd, 2016",
-		url: "http://meyersound.com/mail/2016/160323_ddr/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 seminarBogota : {
-		name: "Bogota Seminar",
-		title: "seminarBogota",
-		received: 10594,
-		opened: 2506,
-		totClicks: 382,
-		uniqClicks: 271,
-		subject: "Seminario de Diseño de Sistemas en Bogotá, Colombia.",
-		date: "March 28th, 2016",
-		url: "http://meyersound.com/mail/2016/education/funda_bogota_1603/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 ddProductInternal : {
-		name: "D&D News: Product Update Internal",
-		title: "ddProductInternal",
-		received: 128,
-		opened: 76,
-		totClicks: 49,
-		uniqClicks: 35,
-		subject: "New Product Announcement | MJF-208, MDM-5000, LYON-WXT",
-		date: "March 28th, 2016",
-		url: "http://meyersound.com/mail/2016/160328_ddr_internal/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 ddProduct : {
-		name: "D&D News: Product Update Internal",
-		title: "ddProduct",
-		received: 473,
-		opened: 171,
-		totClicks: 131,
-		uniqClicks: 59,
-		subject: "New Product Announcement | MJF-208, MDM-5000, LYON-WXT",
-		date: "March 29th, 2016",
-		url: "http://meyersound.com/mail/2016/160329_ddr/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 plsEmailTwo : {
-		name: "Prolight + Sound: Email 2",
-		title: "plsEmailTwo",
-		received: 34836,
-		opened: 7354,
-		totClicks: 1643,
-		uniqClicks: 1031,
-		subject: "New Products at Prolight + Sound",
-		date: "March 30th, 2016",
-		url: "http://www.meyersound.com/mail/2016/1603_pls_promo_02/index.html",
-		percentage: function(){
-			return Math.round(this.opened/this.received * 100);
-		}
-	},
-
-	 defaultObj : {
-		name: "Select an Email",
-		title: "defaultObj",
-		received: 100,
-		opened: 100,
-		totClicks: 100,
-		uniqClicks: 100,
-		subject: "Subject",
-		date: "Date",
-		url: "http://www.meyersound.com/mail/blank.html",
-		percentage: function(){
-			return Math.round(100/100 * 100);
-		}
-	},
-};
 /*
 
 Email Signature Generator
@@ -359,22 +133,28 @@ function init(){
 	    pie = document.querySelector('.pie'),
 	    activeClass = 'active';
 
+	var objects = [];
+
 	$.getJSON( "json/object.json", function( data ) {
 		var items = [];
+		//console.log(data);
 		$.each( data, function( key, val ) {
 			var obj = key.val;
-			items.push( "<li id='" + key + "'>" + val.opened + "</li>" );
+			items.push( "<option value='" + key + "'>" + val.name + "</option>" );
+			val.perc = percent(val);
+			objects.push(val);
 		});
-	 
-		$( "<ul/>", {
-			"class": "my-new-list",
+		$( "<select/>", {
+			"id": "numSwitch",
 			html: items.join( "" )
-		}).appendTo( "#numSwitch" );
+		}).appendTo( "#dropdownAttach" );
+		setPieChart(objects[0]);
+		return objects;
 	});
 
 	function calculations(object){
 		util.textSwap(email_name, object.name);
-		util.textSwap(email_perc, object.percentage());
+		util.textSwap(email_perc, object.perc);
 		util.textSwap(deliv, object.received);
 		util.textSwap(opens, object.opened);
 		util.textSwap(uniqueClicks, object.uniqClicks);
@@ -400,15 +180,8 @@ function init(){
 		}
 	}
 
-	function objPer(obj){
-		var key;
-		for (key in obj){
-			console.log(obj[key].percentage());
-		}
-	}
-
 	function percent(obj){
-
+		return Math.round(obj.opened/obj.received * 100);
 	}
 
 	// work out percentage as a result of total
@@ -418,19 +191,13 @@ function init(){
 	};
 
 
-	// when you click a button setPieChart and setActiveClass
-
-
 	// Set up default settings
 	var setPieChart = function(object){
-	  var number = object.percentage();
+	  var number = object.perc;
 	  var fixedNumber = numberFixer(number),
 	      result = fixedNumber + ' ' + total;
 	  pie.style.strokeDasharray = result;
 	};
-
-	setPieChart(defaultObj);
-	//setActiveClass(buttons.children[0]);
 
 	//on submit
 	function fluxCapacitator(){
@@ -439,67 +206,8 @@ function init(){
 		var numSwitch = util.key("numSwitch"),
 		selection = numSwitch.selectedIndex;
 		defaultEmail.style.display = "none";
-
-		switch(numSwitch[selection].value){
-			case plsWorkshopInvite.title:
-				//alert("works");
-				calculations(plsWorkshopInvite);
-				break;
-			case "productUpdate":
-				calculations(productUpdate);
-				break;
-			case "soundStories":
-				calculations(soundStories);
-				break;
-			case "thinkingSound":
-				calculations(thinkingSound);
-				break;
-			case "constDemo":
-				calculations(constDemo);
-				break;
-			case "plsEmailOne":
-				calculations(plsEmailOne);
-				break;
-			case "plsWorkshopRemind":
-				calculations(plsWorkshopRemind);
-				break;
-			case "soundSource":
-				calculations(soundSource);
-				break;
-			case "ddPLSInternal":
-				calculations(ddPLSInternal);
-				break;
-			case "ddPLS":
-				calculations(ddPLS);
-				break;
-			case "seminarBogota":
-				calculations(seminarBogota);
-				break;
-			case "ddProductInternal":
-				calculations(ddProductInternal);
-				break;
-			case "ddProduct":
-				calculations(ddProduct);
-				break;
-			case "plsEmailTwo":
-				calculations(plsEmailTwo);
-				break;
-			default:
-				calculations(defaultObj);
-				defaultEmail.style.display = "block";
-				break;
-		}
+		calculations(objects[selection]);
 		return false;
-		/*
-		//////////////////////////////////////////////////////////
-
-		if/else chain that:
-
-		checks for empty inputs
-		relays what information was entered into the inputs
-
-		//////////////////////////////////////////////////////////
-		*/
 	}
 
 	//close results

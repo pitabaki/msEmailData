@@ -52,22 +52,28 @@ function init(){
 	    pie = document.querySelector('.pie'),
 	    activeClass = 'active';
 
+	var objects = [];
+
 	$.getJSON( "json/object.json", function( data ) {
 		var items = [];
+		//console.log(data);
 		$.each( data, function( key, val ) {
 			var obj = key.val;
-			items.push( "<li id='" + key + "'>" + val.opened + "</li>" );
+			items.push( "<option value='" + key + "'>" + val.name + "</option>" );
+			val.perc = percent(val);
+			objects.push(val);
 		});
-	 
-		$( "<ul/>", {
-			"class": "my-new-list",
+		$( "<select/>", {
+			"id": "numSwitch",
 			html: items.join( "" )
-		}).appendTo( "#numSwitch" );
+		}).appendTo( "#dropdownAttach" );
+		setPieChart(objects[0]);
+		return objects;
 	});
 
 	function calculations(object){
 		util.textSwap(email_name, object.name);
-		util.textSwap(email_perc, object.percentage());
+		util.textSwap(email_perc, object.perc);
 		util.textSwap(deliv, object.received);
 		util.textSwap(opens, object.opened);
 		util.textSwap(uniqueClicks, object.uniqClicks);
@@ -93,15 +99,8 @@ function init(){
 		}
 	}
 
-	function objPer(obj){
-		var key;
-		for (key in obj){
-			console.log(obj[key].percentage());
-		}
-	}
-
 	function percent(obj){
-
+		return Math.round(obj.opened/obj.received * 100);
 	}
 
 	// work out percentage as a result of total
@@ -111,19 +110,13 @@ function init(){
 	};
 
 
-	// when you click a button setPieChart and setActiveClass
-
-
 	// Set up default settings
 	var setPieChart = function(object){
-	  var number = object.percentage();
+	  var number = object.perc;
 	  var fixedNumber = numberFixer(number),
 	      result = fixedNumber + ' ' + total;
 	  pie.style.strokeDasharray = result;
 	};
-
-	setPieChart(defaultObj);
-	//setActiveClass(buttons.children[0]);
 
 	//on submit
 	function fluxCapacitator(){
@@ -132,67 +125,8 @@ function init(){
 		var numSwitch = util.key("numSwitch"),
 		selection = numSwitch.selectedIndex;
 		defaultEmail.style.display = "none";
-
-		switch(numSwitch[selection].value){
-			case plsWorkshopInvite.title:
-				//alert("works");
-				calculations(plsWorkshopInvite);
-				break;
-			case "productUpdate":
-				calculations(productUpdate);
-				break;
-			case "soundStories":
-				calculations(soundStories);
-				break;
-			case "thinkingSound":
-				calculations(thinkingSound);
-				break;
-			case "constDemo":
-				calculations(constDemo);
-				break;
-			case "plsEmailOne":
-				calculations(plsEmailOne);
-				break;
-			case "plsWorkshopRemind":
-				calculations(plsWorkshopRemind);
-				break;
-			case "soundSource":
-				calculations(soundSource);
-				break;
-			case "ddPLSInternal":
-				calculations(ddPLSInternal);
-				break;
-			case "ddPLS":
-				calculations(ddPLS);
-				break;
-			case "seminarBogota":
-				calculations(seminarBogota);
-				break;
-			case "ddProductInternal":
-				calculations(ddProductInternal);
-				break;
-			case "ddProduct":
-				calculations(ddProduct);
-				break;
-			case "plsEmailTwo":
-				calculations(plsEmailTwo);
-				break;
-			default:
-				calculations(defaultObj);
-				defaultEmail.style.display = "block";
-				break;
-		}
+		calculations(objects[selection]);
 		return false;
-		/*
-		//////////////////////////////////////////////////////////
-
-		if/else chain that:
-
-		checks for empty inputs
-		relays what information was entered into the inputs
-
-		//////////////////////////////////////////////////////////
-		*/
 	}
 
 	//close results
