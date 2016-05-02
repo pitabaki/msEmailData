@@ -87,21 +87,6 @@ Developed by: Peter Berki
 Developed for: Meyer Sound
 
 */
-
-function pieValue(received,opened){
-	return  parseInt(opened)/parseInt(received);
-}
-
-/*
-function emailStats(received,opened,totalClicks,uniqueClicks,date,url){
-	this.received = received;
-	this.opened = opened;
-	this.totalClicks = totalClicks;
-	this.uniqueClicks = uniqueClicks;
-	this.date = date;
-	this.url = url;
-	this.percentage = opened / received;
-}*/
  
 //Defined init Function (onload, do this)
 function init(){
@@ -149,14 +134,21 @@ function init(){
 			html: items.join( "" )
 		}).appendTo( "#dropdownAttach" );
 		setPieChart(objects[0]);
+		$("#veil").css(
+			{"opacity" : "0"}
+		);
+		setTimeout(
+			function() {
+				$("#veil").css({"display":"none"})
+			},1000);
 		return objects;
 	});
 
 	function calculations(object){
 		util.textSwap(email_name, object.name);
 		util.textSwap(email_perc, object.perc);
-		util.textSwap(deliv, object.received);
-		util.textSwap(opens, object.opened);
+		util.textSwap(deliv, object.delivered);
+		util.textSwap(opens, object.uniqOpen);
 		util.textSwap(uniqueClicks, object.uniqClicks);
 		util.textSwap(totalClicks, object.totClicks);
 		util.textSwap(subjectID, object.subject);
@@ -181,7 +173,7 @@ function init(){
 	}
 
 	function percent(obj){
-		return Math.round(obj.opened/obj.received * 100);
+		return Math.round(obj.uniqOpen/obj.delivered * 100);
 	}
 
 	// work out percentage as a result of total

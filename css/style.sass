@@ -10,7 +10,7 @@
 body
 	background-color: $pureWhite
 
-scroll
+scroll,
 p,
 h1,
 h2,
@@ -121,9 +121,9 @@ iframe::-webkit-scrollbar
 	display: none
 
 #veil
-	position: fixed
+	position: absolute
 	display: block
-	background-color: $ms_black
+	background-color: #ffffff
 	width: 100%
 	height: 100%
 	z-index: 99999999999999999999
@@ -307,19 +307,6 @@ figcaption h2
 	height: 40px
 	font-size: 16px
 
-#padTop
-	margin-top: 0%
-	margin-left: 0%
-	left: -50%
-	position: fixed
-	padding-top: 60px
-	padding-left: 100px
-	z-index: 200000
-	height: 110%
-	width: 35%
-	background-color: white
-	transition: all 0.5s ease
-
 #submit
 	margin: 0 auto
 	margin-top: 1.5em
@@ -352,6 +339,7 @@ button input
 
 .ms-nav .container
 	height: 100px
+
 .ms-nav
 	margin: 0 auto
 	background-color: $rich_grey
@@ -432,26 +420,6 @@ ol
 	z-index: 55555
 	transition: all 0.5s ease
 
-.phone-list
-	display: block
-	width: 100%
-
-.phone-ext
-	display: inline
-	width: 20%
-
-.phone-list label,
-.phone-list input,
-.phone-ext label,
-.phone-ext input
-	display: inline
-
-.phone-list input
-	width: 70%
-
-.phone-ext input
-	width: 20%
-
 .overlay
 	@extend .video-overlay
 	margin-top: 35%
@@ -477,14 +445,6 @@ ol
 		height: 110%
 		width: 180%
 
-	.phone-list input
-		width: 67%
-
-	.phone-ext input
-		width: 20%
-
-	#padTop
-		width: 50%
 	.pieBG
 		margin-top: 9%
 		margin-left: 20%
@@ -492,13 +452,6 @@ ol
 		margin-top: 28%
 		margin-left: 13%
 @media screen and (max-width: 992px)
-	#padTop
-		left: -1000px
-		width: 100%
-
-	.overhang
-		width: 100%
-
 	.instructions
 		margin-top: 14%
 
@@ -514,11 +467,6 @@ ol
 	#form
 		margin: 0 auto
 
-	.phone-list input
-		width: 71%
-
-	.phone-ext input
-		width: 10%
 	.pieBG
 		margin-top: 7%
 		margin-left: 24%
@@ -548,22 +496,5 @@ ol
 	.email_preview
 		margin-top: 40%
 
-	.padTop
-		margin-top: 8%
-
-	#padTop
-		margin-top: 0
-		margin-left: 0
-		padding-left: 40px
-
 	.copyInst
 		margin-top: 0
-
-	.phone-ext input
-		width: 15%
-
-@media screen and (max-width: 440px)
-	.phone-list input
-		width: 67%
-	.phone-ext input
-		width: 15%

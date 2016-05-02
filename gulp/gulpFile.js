@@ -29,5 +29,7 @@ gulp.task('scripty', function(){
 gulp.task('sass', function () {
   gulp.src('../css/*.sass')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('../css'));
+    .pipe(gulp.dest('../css'))
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('../css/min'));;
 });
